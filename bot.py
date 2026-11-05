@@ -529,7 +529,7 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.BadArgument):
         return await ctx.reply("المدخل غير صحيح. تحقق من المنشن أو الرتبة أو القناة.")
     log.exception("Command error", exc_info=error)
-    await ctx.reply("حدث خطأ غير متوقع. راجع ملف bot.log.")
+    await ctx.reply("حدث خطأ غير متوقع. راجع سجلات البوت في لوحة الاستضافة.")
 
 
 async def main():
