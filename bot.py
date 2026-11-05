@@ -185,14 +185,56 @@ async def on_ready():
 
 @bot.command(name="help")
 async def help_command(ctx):
-    embed = make_embed(
-        "TAG MANAGER | قائمة الأوامر",
-        "بوت إدارة ومراقبة Server Tag.\nاختر لوحة التحكم داخل ديسكورد أو استخدم الأوامر النصية.",
+    embed = discord.Embed(
+        title="TAG MANAGER | قائمة الأوامر",
+        description=(
+            "بوت إدارة ومراقبة Server Tag.\n"
+            "جميع أوامر البوت وطريقة استخدامها:"
+        ),
+        color=14203904
     )
-    embed.add_field(name="أوامر عامة", value=f"`{PREFIX}help` عرض المساعدة\n`{PREFIX}panel` فتح لوحة ديسكورد", inline=False)
-    embed.add_field(name="إعدادات السيرفر", value=f"`{PREFIX}settag TAG` تحديد التاق\n`{PREFIX}setrole @Role` تحديد الرتبة\n`{PREFIX}setlog #channel` تحديد روم اللوق\n`{PREFIX}config` عرض الإعدادات", inline=False)
-    embed.add_field(name="إدارة الأونرات", value=f"`{PREFIX}owners` عرض الأونرات\n`{PREFIX}owner add @user` إضافة أونر\n`{PREFIX}owner remove @user` إزالة أونر", inline=False)
-    embed.add_field(name="المزامنة", value=f"`{PREFIX}sync` مزامنة أفضل جهد للأعضاء المتاحين", inline=False)
+
+    embed.add_field(
+        name="أوامر عامة",
+        value=(
+            f"`{PREFIX}help` عرض المساعدة\n"
+            f"`{PREFIX}panel` فتح لوحة التحكم"
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="إعدادات التاق والسيرفر",
+        value=(
+            f"`{PREFIX}settag TAG` تحديد التاق\n"
+            f"`{PREFIX}setrole @Role` تحديد رتبة التاق\n"
+            f"`{PREFIX}setlog #channel` تحديد روم اللوق\n"
+            f"`{PREFIX}config` عرض إعدادات السيرفر"
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="إدارة الأونرات",
+        value=(
+            f"`{PREFIX}owners` عرض قائمة الأونرات\n"
+            f"`{PREFIX}owner add @user` إضافة أونر\n"
+            f"`{PREFIX}owner remove @user` إزالة أونر"
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="مزامنة وفحص التاقات",
+        value=(
+            f"`{PREFIX}sync` فحص أعضاء السيرفر ومزامنة رتبهم\n"
+            "الفحص التلقائي يتكرر كل 30 ثانية."
+        ),
+        inline=False
+    )
+
+    embed.set_footer(text="TAG MANAGER")
+
     await ctx.send(embed=embed)
 
 
