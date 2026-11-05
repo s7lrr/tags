@@ -1,11 +1,17 @@
+
 import json
 import os
 import tempfile
 import threading
 from pathlib import Path
 
-DATA = Path("data")
-DATA.mkdir(exist_ok=True)
+# Use a writable persistent directory provided by the hosting platform.
+# Set DATA_DIR in Hostless to the path of its persistent storage.
+DATA = Path(
+    os.environ.get("DATA_DIR", "/tmp/tag_manager_data")
+).expanduser()
+
+DATA.mkdir(parents=True, exist_ok=True)
 
 
 class Store:
@@ -14,6 +20,7 @@ class Store:
         self.owners_file = DATA / "owners.json"
         self.servers_file = DATA / "servers.json"
         self.logs_file = DATA / "logs.json"
+
         self._ensure(self.owners_file, {"owners": []})
         self._ensure(self.servers_file, {"guilds": {}})
         self._ensure(self.logs_file, {"events": []})
@@ -30,7 +37,11 @@ class Store:
 
     def _write(self, path, value):
         path.parent.mkdir(parents=True, exist_ok=True)
-        fd, temp_name = tempfile.mkstemp(prefix=path.stem, suffix=".tmp", dir=str(path.parent))
+        fd, temp_name = tempfile.mkstemp(
+            prefix=path.stem,
+            suffix=".tmp",
+            dir=str(path.parent)
+        )
         try:
             with os.fdopen(fd, "w", encoding="utf-8") as f:
                 json.dump(value, f, ensure_ascii=False, indent=2)
@@ -43,7 +54,9 @@ class Store:
 
     def list_owners(self):
         with self.lock:
-            return list(self._read(self.owners_file, {"owners": []}).get("owners", []))
+            return list(
+                self._read(self.owners_file, {"owners": []}).get("owners", [])
+            )
 
     def is_owner(self, user_id):
         return int(user_id) in self.list_owners()
@@ -58,39 +71,62 @@ class Store:
     def remove_owner(self, user_id):
         with self.lock:
             data = self._read(self.owners_file, {"owners": []})
-            data["owners"] = [x for x in data["owners"] if int(x) != int(user_id)]
+            data["owners"] = [
+                x for x in data["owners"] if int(x) != int(user_id)
+            ]
             self._write(self.owners_file, data)
 
     def get_guild(self, guild_id):
         with self.lock:
             data = self._read(self.servers_file, {"guilds": {}})
             return data.get("guilds", {}).get(str(guild_id), {
-                "tag": None, "role_id": None, "log_channel_id": None, "members_with_tag": []
+                "tag": None,
+                "role_id": None,
+                "log_channel_id": None,
+                "members_with_tag": []
             })
 
     def set_guild(self, guild_id, **changes):
         with self.lock:
             data = self._read(self.servers_file, {"guilds": {}})
-            guild = data.setdefault("guilds", {}).setdefault(str(guild_id), {
-                "tag": None, "role_id": None, "log_channel_id": None, "members_with_tag": []
-            })
+            guild = data.setdefault("guilds", {}).setdefault(
+                str(guild_id), {
+                    "tag": None,
+                    "role_id": None,
+                    "log_channel_id": None,
+                    "members_with_tag": []
+                }
+            )
             guild.update(changes)
             self._write(self.servers_file, data)
 
     def has_member_tag(self, guild_id, member_id):
-        return str(member_id) in set(map(str, self.get_guild(guild_id).get("members_with_tag", [])))
+        return str(member_id) in set(map(
+            str,
+            self.get_guild(guild_id).get("members_with_tag", [])
+        ))
 
     def set_member_tag(self, guild_id, member_id, enabled):
         with self.lock:
             data = self._read(self.servers_file, {"guilds": {}})
-            guild = data.setdefault("guilds", {}).setdefault(str(guild_id), {
-                "tag": None, "role_id": None, "log_channel_id": None, "members_with_tag": []
-            })
-            members = set(map(str, guild.get("members_with_tag", [])))
+            guild = data.setdefault("guilds", {}).setdefault(
+                str(guild_id), {
+                    "tag": None,
+                    "role_id": None,
+                    "log_channel_id": None,
+                    "members_with_tag": []
+                }
+            )
+            members = set(map(
+                str,
+                guild.get("members_with_tag", [])
+            ))
+
             if enabled:
                 members.add(str(member_id))
             else:
                 members.discard(str(member_id))
+
             guild["members_with_tag"] = sorted(members)
             self._write(self.servers_file, data)
 
@@ -103,12 +139,18 @@ class Store:
 
     def recent_logs(self, limit=100):
         with self.lock:
-            return self._read(self.logs_file, {"events": []}).get("events", [])[:limit]
+            return self._read(
+                self.logs_file, {"events": []}
+            ).get("events", [])[:limit]
 
     def stats(self):
         logs = self.recent_logs(5000)
         return {
             "events": len(logs),
-            "added": sum(1 for x in logs if x.get("event") == "TAG_ADDED"),
-            "removed": sum(1 for x in logs if x.get("event") == "TAG_REMOVED"),
+            "added": sum(
+                1 for x in logs if x.get("event") == "TAG_ADDED"
+            ),
+            "removed": sum(
+                1 for x in logs if x.get("event") == "TAG_REMOVED"
+            ),
         }
