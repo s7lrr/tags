@@ -186,54 +186,23 @@ async def on_ready():
 @bot.command(name="help")
 async def help_command(ctx):
     embed = discord.Embed(
-        title="TAG MANAGER | قائمة الأوامر",
+        title="اوامر بوت التاق",
         description=(
-            "بوت إدارة ومراقبة Server Tag.\n"
-            "جميع أوامر البوت وطريقة استخدامها:"
+            f"**{PREFIX}help** : عرض المساعدة\n"
+            f"**{PREFIX}panel** : فتح لوحة ديسكورد\n"
+            f"**{PREFIX}settag TAG** : تحديد التاق\n"
+            f"**{PREFIX}setrole @Role** : تحديد الرتبة\n"
+            f"**{PREFIX}setlog #channel** : تحديد روم اللوق\n"
+            f"**{PREFIX}config** : عرض الإعدادات\n"
+            f"**{PREFIX}owners** : عرض الأونرات\n"
+            f"**{PREFIX}owner add @user** : إضافة أونر\n"
+            f"**{PREFIX}owner remove @user** : إزالة أونر\n"
+            f"**{PREFIX}sync** : للفحص الدوري والمزامنة\n"
         ),
-        color=14203904
+        color=16645629
     )
 
-    embed.add_field(
-        name="أوامر عامة",
-        value=(
-            f"`{PREFIX}help` عرض المساعدة\n"
-            f"`{PREFIX}panel` فتح لوحة التحكم"
-        ),
-        inline=False
-    )
-
-    embed.add_field(
-        name="إعدادات التاق والسيرفر",
-        value=(
-            f"`{PREFIX}settag TAG` تحديد التاق\n"
-            f"`{PREFIX}setrole @Role` تحديد رتبة التاق\n"
-            f"`{PREFIX}setlog #channel` تحديد روم اللوق\n"
-            f"`{PREFIX}config` عرض إعدادات السيرفر"
-        ),
-        inline=False
-    )
-
-    embed.add_field(
-        name="إدارة الأونرات",
-        value=(
-            f"`{PREFIX}owners` عرض قائمة الأونرات\n"
-            f"`{PREFIX}owner add @user` إضافة أونر\n"
-            f"`{PREFIX}owner remove @user` إزالة أونر"
-        ),
-        inline=False
-    )
-
-    embed.add_field(
-        name="مزامنة وفحص التاقات",
-        value=(
-            f"`{PREFIX}sync` فحص أعضاء السيرفر ومزامنة رتبهم\n"
-            "الفحص التلقائي يتكرر كل 30 ثانية."
-        ),
-        inline=False
-    )
-
-    embed.set_footer(text="TAG MANAGER")
+    embed.set_footer(text="1 / 1 صفحة")
 
     await ctx.send(embed=embed)
 
