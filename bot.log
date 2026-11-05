@@ -1,0 +1,72 @@
+2026-11-05 02:28:30,352 | WARNING | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-11-05 02:28:30,353 | WARNING | discord.client | davey is not installed, voice will NOT be supported
+2026-11-05 02:28:30,361 | INFO | discord.client | logging in using static token
+2026-11-05 02:28:32,050 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 4a0fb648aec556ddb138d0827f9ea987).
+2026-11-05 02:28:34,073 | INFO | tag-manager | Connected as could#9157 (1562835013928620085)
+2026-11-05 02:29:25,613 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:29:24 +0300] "GET / HTTP/1.1" 302 184 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:29:25,629 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:29:25 +0300] "GET /login HTTP/1.1" 200 2918 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:29:27,499 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:29:27 +0300] "GET /favicon.ico HTTP/1.1" 404 174 "http://127.0.0.1:8080/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:29:41,950 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:29:41 +0300] "GET /login HTTP/1.1" 200 2918 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:09,001 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:08 +0300] "POST /login HTTP/1.1" 302 396 "http://127.0.0.1:8080/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:09,272 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:09 +0300] "GET /dashboard HTTP/1.1" 200 4057 "http://127.0.0.1:8080/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:15,348 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:15 +0300] "GET /settings HTTP/1.1" 200 4606 "http://127.0.0.1:8080/dashboard" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:43,907 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:43 +0300] "GET /logs HTTP/1.1" 200 3367 "http://127.0.0.1:8080/settings" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:44,739 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:44 +0300] "GET /owners HTTP/1.1" 200 3524 "http://127.0.0.1:8080/logs" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:49,177 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:49 +0300] "POST /owners/add HTTP/1.1" 400 185 "http://127.0.0.1:8080/owners" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:54,668 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:54 +0300] "GET /logout HTTP/1.1" 302 350 "http://127.0.0.1:8080/owners" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:30:54,695 | INFO | aiohttp.access | 127.0.0.1 [05/Nov/2026:02:30:54 +0300] "GET /login HTTP/1.1" 200 2918 "http://127.0.0.1:8080/owners" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36"
+2026-11-05 02:42:07,622 | WARNING | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-11-05 02:42:07,624 | WARNING | discord.client | davey is not installed, voice will NOT be supported
+2026-11-05 02:42:07,632 | INFO | discord.client | logging in using static token
+2026-11-05 02:42:09,013 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 599b435131a0515adf2bfcab12b1ed93).
+2026-11-05 02:42:11,034 | INFO | tag-manager | Connected as could#9157 (1562835013928620085)
+2026-11-05 02:49:20,343 | WARNING | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-11-05 02:49:20,345 | WARNING | discord.client | davey is not installed, voice will NOT be supported
+2026-11-05 02:49:20,351 | INFO | discord.client | logging in using static token
+2026-11-05 02:49:23,188 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: fdf45b0f280ca051064a5d75fc395566).
+2026-11-05 02:49:25,206 | INFO | tag-manager | Connected as could#9157 (1562835013928620085)
+2026-11-05 02:59:38,827 | WARNING | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-11-05 02:59:38,829 | WARNING | discord.client | davey is not installed, voice will NOT be supported
+2026-11-05 02:59:38,844 | INFO | discord.client | logging in using static token
+2026-11-05 02:59:40,368 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: ef6ad532db2f48f4268a90b3cde5a2e7).
+2026-11-05 02:59:42,384 | INFO | tag-manager | Connected as could#9157 (1562835013928620085)
+2026-11-05 03:10:44,178 | WARNING | discord.client | PyNaCl is not installed, voice will NOT be supported
+2026-11-05 03:10:44,179 | WARNING | discord.client | davey is not installed, voice will NOT be supported
+2026-11-05 03:10:44,185 | INFO | discord.client | logging in using static token
+2026-11-05 03:10:46,430 | INFO | discord.gateway | Shard ID None has connected to Gateway (Session ID: 5c440b6daf4d639c679fd8dbd97388d2).
+2026-11-05 03:10:48,450 | INFO | tag-manager | Connected as could#9157 (1562835013928620085)
+2026-11-05 03:11:49,140 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:12:19,571 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:12:49,792 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:13:19,333 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:13:49,413 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:14:19,931 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:14:49,157 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:15:19,247 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:15:49,318 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:16:19,412 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:16:49,179 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:17:19,358 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:17:49,992 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:18:19,893 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:18:49,310 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:19:19,293 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:19:49,186 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:20:19,184 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:20:49,360 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:21:19,149 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:21:49,396 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:22:20,022 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:22:50,055 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:23:19,598 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:23:49,945 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:24:20,208 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:24:49,354 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:25:19,390 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:25:49,625 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:26:19,931 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:26:49,425 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:27:19,407 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:27:49,448 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:28:19,561 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
+2026-11-05 03:28:49,469 | INFO | tag-manager | Tag scan guild=1562160314143866902 checked=31 changed=0 unknown=0 pages=1
